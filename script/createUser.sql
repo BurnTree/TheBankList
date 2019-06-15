@@ -1,0 +1,11 @@
+insert into user(name, surName)values ('ilya','simple');
+insert into user(name, surName)values ('Darth','Vader');
+insert into user(name, surName)values ('Mario','Bross');
+insert into user(name, surName)values ('Luiji','Lost');
+insert into user(name, surName)values ('Anakin','Skywalker');
+insert into user(name, surName)values ('Harry','Potter');
+insert into user(name, surName)values ('Ray','Bradbury');
+insert into user(name, surName)values ('J.R.R.','Tolkien');
+insert into user(name, surName)values ('John','Wick');
+insert into user(name, surName)values ('Barry','M');
+select * from user;
