@@ -88,4 +88,22 @@ public class daoJdbc implements daoMethod {
         System.out.println(newAccount);
         return newAccount;
     }
+
+    public String getRich() throws SQLException {
+        String sq = "select user.name, sum(account) from user join account a on user.userid = a.userid group by name";
+        String sql = "SELECT name, SUM(account) as score FROM user JOIN account a ON user.userid = a.userid GROUP BY name order by account desc ";
+        ResultSet resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        return resultSet.getString("score");
+    }
+
+    public User getRichUser() throws SQLException {
+        String sql = "SELECT name, surName, SUM(account) as score FROM user JOIN account a ON user.userid = a.userid GROUP BY name order by account desc ";
+        ResultSet resultSet = statement.executeQuery(sql);
+        resultSet.next();
+        User newUser = new User();
+        newUser.setName(resultSet.getString("name"));
+        newUser.setSurName(resultSet.getString("surName"));
+        return newUser;
+    }
 }
